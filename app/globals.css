@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -120,3 +124,30 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* quick safety CSS to normalize icon sizes and spacing (paste at end of globals.css) */
+
+/* make svg icons scale to the font-size and be consistent */
+svg {
+  width: 1em !important;
+  height: 1em !important;
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* ensure icon containers don't blow up */
+.inline-icon, .icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* reduce big default SVG strokes if any */
+svg[stroke] { stroke-width: 1 !important; }
+
+/* small layout helpers to repair spacing issues */
+.header-badges > * { margin-right: .5rem; margin-bottom: .25rem; }
+.card { overflow: hidden; }

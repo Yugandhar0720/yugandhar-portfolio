@@ -3,7 +3,7 @@
 3:I[31713,["/sai-yugandhar-portfolio/_next/static/chunks/38ce2adf89087b10.js"],"default"]
 6:I[97367,["/sai-yugandhar-portfolio/_next/static/chunks/42879de7b8087bc9.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
-0:{"buildId":"fqRylJ0-yqE2oKQzYSkUX","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/sai-yugandhar-portfolio/_next/static/chunks/38ce2adf89087b10.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"Mwb7sqTsxxR64tKFmGfDx","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/sai-yugandhar-portfolio/_next/static/chunks/38ce2adf89087b10.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null

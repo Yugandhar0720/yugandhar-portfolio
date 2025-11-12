@@ -1,166 +1,189 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, MapPin, Phone } from "lucide-react";
+import React from "react";
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900">
-      {/* Header */}
-      <header className="p-8 text-center border-b border-gray-200">
-        <h1 className="text-4xl font-bold">Kammari Sai Yugandhar</h1>
-        <p className="text-lg text-gray-600 mt-2">
-          Data Engineering Associate @ Accenture
-        </p>
-        <div className="flex flex-wrap justify-center gap-4 mt-4 text-gray-700">
-          <div className="flex items-center gap-1">
-            <MapPin size={18} /> Navi Mumbai
+    <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+      {/* Container */}
+      <div className="max-w-5xl mx-auto px-6 py-12">
+        {/* Header */}
+        <header className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
+          <div className="flex-none">
+            {/* Profile image (put public/profile.jpg) */}
+            <div className="w-28 h-28 rounded-xl overflow-hidden shadow-lg bg-white dark:bg-gray-800">
+              <img
+                src="/profile.jpg"
+                alt="Sai Yugandhar"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // fallback if image not present
+                  (e.currentTarget as HTMLImageElement).src =
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='100%' height='100%' fill='%23e6e6e6'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'%3Eprofile%3C/text%3E%3C/svg%3E";
+                }}
+              />
+            </div>
           </div>
-          <div className="flex items-center gap-1">
-            <Phone size={18} /> +91 93817 59232
-          </div>
-          <div className="flex items-center gap-1">
-            <Mail size={18} /> saiyugandhar0720@gmail.com
-          </div>
-          <a
-            href="https://linkedin.com/in/sai-yugandhar-kammari-a63530200"
-            target="_blank"
-            className="flex items-center gap-1 hover:text-blue-600"
-          >
-            <Linkedin size={18} /> LinkedIn
-          </a>
-        </div>
-      </header>
 
-      {/* Main */}
-      <main className="max-w-5xl mx-auto px-6 py-10 space-y-10">
-        {/* Professional Summary */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Professional Summary</h2>
-          <p className="text-gray-700 leading-relaxed">
-            Results-driven Data Engineering Associate at Accenture with over 1 year of hands-on
-            experience in data management, ETL pipeline development, and cloud-based analytics.
-            Proficient in Databricks, Informatica, Python, SQL, and Big Data ecosystems, with a strong
-            ability to design scalable, automated data workflows that enhance operational performance
-            and decision-making efficiency. Certified Databricks Data Engineer Professional & Associate,
-            with a passion for building high-performance data systems that bridge business strategy and
-            data-driven insights.
-          </p>
-        </section>
+          <div className="flex-1">
+            <h1 className="text-3xl md:text-4xl font-bold">Kammari Sai Yugandhar</h1>
+            <p className="mt-1 text-gray-600 dark:text-gray-300">
+              Data Engineering Associate @ Accenture
+            </p>
 
-        {/* Experience */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Professional Experience</h2>
-          <Card className="shadow-md">
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold">
-                Accenture — Data Engineering, Management & Governance Associate
-              </h3>
-              <p className="text-sm text-gray-500 mb-2">Navi Mumbai | July 2024 – Present</p>
-              <ul className="list-disc ml-6 space-y-2 text-gray-700">
-                <li>
-                  Engineered and optimized ETL pipelines using Informatica BDM and Databricks, ensuring seamless integration across multiple data sources.
-                </li>
-                <li>
-                  Automated workflows, reducing manual intervention by 40% and improving data refresh speed by 30%.
-                </li>
-                <li>
-                  Maintained Big Data Lake architecture on Azure and HDFS for scalability and accuracy.
-                </li>
-                <li>
-                  Improved SQL performance via optimization, achieving 25% faster data processing.
-                </li>
-                <li>
-                  Collaborated in Agile teams to ensure compliance with governance standards.
-                </li>
-              </ul>
-              <p className="mt-3 text-sm text-gray-600">
-                Technologies: Databricks, Informatica BDM, Azure Data Factory, SQL, PySpark, Hadoop, Python
+            <div className="mt-4 flex flex-wrap gap-3 items-center text-sm text-gray-700 dark:text-gray-300">
+              <div className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 py-2 px-3 rounded-lg shadow-sm">
+                <svg className="w-4 h-4 text-gray-500" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C8 2 4 4.5 4 9c0 5 7 13 8 13s8-8 8-13c0-4.5-4-7-8-7z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Navi Mumbai
+              </div>
+
+              <div className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 py-2 px-3 rounded-lg shadow-sm">
+                <svg className="w-4 h-4 text-gray-500" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 5v4a6 6 0 006 6h2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M21 15v4a2 2 0 01-2 2h-2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                +91 93817 59232
+              </div>
+
+              <div className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 py-2 px-3 rounded-lg shadow-sm">
+                <svg className="w-4 h-4 text-gray-500" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 8l8 5 8-5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                saiyugandhar0720@gmail.com
+              </div>
+
+              <a
+                href="https://linkedin.com/in/sai-yugandhar-kammari-a63530200"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-blue-600 hover:underline"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v14H0zM8 8h4.8v2h.1c.7-1.2 2.5-2.5 5.1-2.5 5.5 0 6.5 3.6 6.5 8.2V22H19V15.2c0-1.6 0-3.7-2.3-3.7-2.3 0-2.6 1.8-2.6 3.5V22H8V8z"/>
+                </svg>
+                LinkedIn
+              </a>
+            </div>
+
+            {/* Action buttons */}
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="mailto:saiyugandhar0720@gmail.com"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+              >
+                Contact
+              </a>
+
+              <a
+                href="resume.pdf"
+                download
+                className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg bg-white dark:bg-gray-800 hover:shadow transition"
+              >
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </header>
+
+        {/* Content grid */}
+        <main className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Left column (main) */}
+          <section className="md:col-span-2 space-y-6">
+            {/* Summary card */}
+            <article className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow">
+              <h2 className="text-xl font-semibold mb-3">Professional Summary</h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Results-driven Data Engineering Associate at Accenture with over 1 year of hands-on
+                experience in data management, ETL pipeline development, and cloud-based analytics.
+                Proficient in Databricks, Informatica, Python, SQL, and Big Data ecosystems, with a
+                strong ability to design scalable, automated data workflows that enhance operational
+                performance and decision-making efficiency.
               </p>
-            </CardContent>
-          </Card>
-        </section>
+            </article>
 
-        {/* Projects */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Projects</h2>
-          <Card className="shadow-md">
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold">Bank of Baroda Analytics and Reporting System</h3>
-              <p className="text-sm text-gray-500 mb-2">
-                Informatica BDM, HDFS, Python, SQL
-              </p>
-              <ul className="list-disc ml-6 space-y-2 text-gray-700">
-                <li>Designed ETL workflows to process 1M+ daily financial transactions.</li>
-                <li>Leveraged HDFS for distributed storage, reducing query latency by 20%.</li>
-                <li>Automated reporting pipelines using Python, increasing insight speed by 35%.</li>
+            {/* Experience card */}
+            <article className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow">
+              <div className="flex justify-between items-start">
+                <h2 className="text-xl font-semibold">Professional Experience</h2>
+                <span className="text-sm text-gray-500">Since Jul 2024</span>
+              </div>
+
+              <div className="mt-4 space-y-3">
+                <div>
+                  <h3 className="font-semibold">Accenture — Data Engineering, Management & Governance Associate</h3>
+                  <p className="text-sm text-gray-500">Navi Mumbai | July 2024 – Present</p>
+                  <ul className="mt-2 list-disc ml-5 text-gray-700 dark:text-gray-300">
+                    <li>Engineered and optimized ETL pipelines using Informatica BDM and Databricks.</li>
+                    <li>Automated workflows, reducing manual intervention by 40% and improving refresh speed by 30%.</li>
+                    <li>Maintained Big Data Lake architecture on Azure and HDFS for scalability and accuracy.</li>
+                    <li>Improved SQL performance via optimization, achieving 25% faster processing.</li>
+                  </ul>
+                  <p className="mt-2 text-sm text-gray-500">Technologies: Databricks, Informatica BDM, Azure Data Factory, SQL, PySpark, Hadoop, Python</p>
+                </div>
+              </div>
+            </article>
+
+            {/* Projects card */}
+            <article className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow">
+              <h2 className="text-xl font-semibold mb-3">Projects</h2>
+              <div>
+                <h4 className="font-semibold">Bank of Baroda Analytics and Reporting System</h4>
+                <p className="text-sm text-gray-500">Informatica BDM, HDFS, Python, SQL</p>
+                <ul className="mt-2 list-disc ml-5 text-gray-700 dark:text-gray-300">
+                  <li>Designed ETL workflows to process 1M+ daily transactions.</li>
+                  <li>Leveraged HDFS for distributed storage, reducing query latency by 20%.</li>
+                  <li>Automated reporting pipelines using Python, increasing insight speed by 35%.</li>
+                </ul>
+              </div>
+            </article>
+          </section>
+
+          {/* Right column (sidebar) */}
+          <aside className="space-y-6">
+            {/* Certifications card */}
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow">
+              <h3 className="font-semibold mb-2">Certifications</h3>
+              <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                <li>Databricks Certified Data Engineer Professional</li>
+                <li>Databricks Certified Data Engineer Associate</li>
+                <li>From Data to Insights with Google Cloud (Coursera)</li>
+                <li>Agentic AI — Accenture TQ</li>
               </ul>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Certifications */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Certifications</h2>
-          <ul className="list-disc ml-6 space-y-2 text-gray-700">
-            <li>Databricks Certified Data Engineer Professional (2025 – 2027)</li>
-            <li>Databricks Certified Data Engineer Associate (2025 – 2027)</li>
-            <li>From Data to Insights with Google Cloud – Coursera (2022)</li>
-            <li>Accenture Technology Quotient (TQ) – Agentic AI Certified (2025)</li>
-          </ul>
-        </section>
-
-        {/* Technical Skills */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Technical Skills</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700">
-            <div>
-              <h4 className="font-semibold">Programming</h4>
-              <p>Python, C++, SQL</p>
             </div>
-            <div>
-              <h4 className="font-semibold">Data Engineering</h4>
-              <p>Databricks, Informatica BDM, Hadoop, PySpark</p>
-            </div>
-            <div>
-              <h4 className="font-semibold">Cloud</h4>
-              <p>Azure (ADF, ADLS), AWS (S3, EC2)</p>
-            </div>
-            <div>
-              <h4 className="font-semibold">DevOps & Visualization</h4>
-              <p>Docker, Git, Power BI, Tableau</p>
-            </div>
-            <div>
-              <h4 className="font-semibold">Core Concepts</h4>
-              <p>ETL, Data Modeling, Data Governance, Big Data Analytics</p>
-            </div>
-          </div>
-        </section>
 
-        {/* Achievements */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Achievements & Leadership</h2>
-          <ul className="list-disc ml-6 space-y-2 text-gray-700">
-            <li>Technovanza 2.0 Hackathon Finalist — Smart India Hackathon 2022 (National Round).</li>
-            <li>Information Security Advocate — Recognized at Accenture.</li>
-            <li>Technical Lead, AI Club – CMRTC — Organized ML workshops for 100+ students.</li>
-            <li>Represented college in Badminton and Cricket at inter-college level.</li>
-          </ul>
-        </section>
+            {/* Skills card */}
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow">
+              <h3 className="font-semibold mb-2">Skills</h3>
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                <span className="inline-flex items-center justify-center px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">Python</span>
+                <span className="inline-flex items-center justify-center px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">SQL</span>
+                <span className="inline-flex items-center justify-center px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">PySpark</span>
+                <span className="inline-flex items-center justify-center px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">Databricks</span>
+                <span className="inline-flex items-center justify-center px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">Informatica</span>
+                <span className="inline-flex items-center justify-center px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">Azure</span>
+              </div>
+            </div>
 
-        {/* Contact */}
-        <div className="text-center py-8">
-          <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
-            <a href="mailto:saiyugandhar0720@gmail.com">Get in Touch</a>
-          </Button>
-        </div>
-      </main>
+            {/* Achievements card */}
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow">
+              <h3 className="font-semibold mb-2">Achievements</h3>
+              <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                <li>Technovanza 2.0 Hackathon Finalist (Smart India Hackathon)</li>
+                <li>Information Security Advocate — Accenture</li>
+                <li>Technical Lead, AI Club — CMRTC</li>
+              </ul>
+            </div>
+          </aside>
+        </main>
 
-      {/* Footer */}
-      <footer className="text-center text-gray-500 py-6 border-t border-gray-200 text-sm">
-        © {new Date().getFullYear()} Kammari Sai Yugandhar. Built with ❤️ using React & TailwindCSS.
-      </footer>
+        {/* Footer */}
+        <footer className="mt-12 text-center text-sm text-gray-500">
+          © {new Date().getFullYear()} Kammari Sai Yugandhar — Built with Next.js & Tailwind
+        </footer>
+      </div>
     </div>
   );
 }

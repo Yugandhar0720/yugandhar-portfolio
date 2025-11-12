@@ -3,10 +3,12 @@ const isProd = process.env.NODE_ENV === 'production';
 const repo = 'sai-yugandhar-portfolio'; // your GitHub repo name
 
 const nextConfig = {
-  output: 'export',               // writes static site to /out during "next build"
-  images: { unoptimized: true },  // required for GitHub Pages
+  output: 'export',               // required for static export
+  images: { unoptimized: true },  // required for GH Pages
   basePath: isProd ? `/${repo}` : '',
   assetPrefix: isProd ? `/${repo}/` : '',
+  trailingSlash: true,            // ensures all paths end with /
+  distDir: '.next',               // default build folder
 };
 
 export default nextConfig;
